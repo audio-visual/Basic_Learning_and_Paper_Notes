@@ -2,7 +2,7 @@
 
 > **论文**：Hubert Siuzdak, *Vocos: Closing the Gap Between Time-Domain and Fourier-Based Neural Vocoders for High-Quality Audio Synthesis*, ICLR 2024  
 > **论文链接**：[OpenReview](https://openreview.net/forum?id=d6b6fd2b9464f306e29d42b554de0a493bb52ade) · [arXiv](https://arxiv.org/abs/2306.00814)  
-> **关键词**：神经声码器、复数 STFT、相位缠绕、iSTFT、GAN
+> **关键词**：神经声码器、复数 STFT、相位缠绕、iSTFT、GAN  
 > **代码**：[gemelo-ai/vocos](https://github.com/gemelo-ai/vocos)
 
 ## 一、总起：这篇文章做了什么？
@@ -23,7 +23,7 @@ Vocos 是一个把 **mel 频谱等声学特征转换为音频波形**的神经�
 
 
 默认 mel 路径可以按下面的形状追踪。设 mel 有 $T$ 帧，配置使用 24 kHz、100 个 mel bin、`n_fft=1024`、`hop_length=256`：
-
+（Vocos 默认采样率是 24,000 Hz，所以 n_fft=1024 个采样点约为 42.7 ms）
 ```text
 mel [B, 100, T]
   → ConvNeXt 主干 [B, T, 512]（保持 T 帧）
